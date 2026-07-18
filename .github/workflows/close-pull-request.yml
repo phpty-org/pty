@@ -1,0 +1,24 @@
+name: Close pull requests
+
+# This repository is a read-only distribution mirror; development happens in the
+# monorepo. GitHub has no setting to disable pull requests, so any that are
+# opened here are closed automatically with a pointer upstream. In the monorepo
+# this file sits under a module directory, not the repo root, so GitHub ignores
+# it; in the split repository the module is the root, so it runs.
+on:
+  pull_request_target:
+    types: [opened, reopened]
+
+permissions:
+  pull-requests: write
+
+jobs:
+  close:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: superbrothers/close-pull-request@v3
+        with:
+          comment: >
+            Thanks! This is a read-only mirror split from
+            https://github.com/phpty-org/phpty — please open your pull request
+            there instead.

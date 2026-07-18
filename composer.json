@@ -1,0 +1,22 @@
+{
+    "name": "phpty/pty",
+    "description": "Create pseudo-terminal pairs and start child processes on them, through FFI.",
+    "license": "MIT",
+    "keywords": ["pty", "pseudo-terminal", "openpty", "ffi", "process"],
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "ext-ffi": "*",
+        "ext-pcntl": "*",
+        "ext-posix": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "PhPty\\Pty\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PhPty\\Pty\\Tests\\": "tests/"
+        }
+    }
+}
